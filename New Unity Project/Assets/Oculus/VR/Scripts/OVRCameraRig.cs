@@ -116,6 +116,7 @@ public class OVRCameraRig : MonoBehaviour
 
 		if (!useFixedUpdateForTracking)
 			UpdateAnchors();
+		
 	}
 #endregion
 
