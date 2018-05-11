@@ -306,11 +306,12 @@ public class OVRPlayerController : MonoBehaviour
 			return;
 
 		if (EnableLinearMovement)
-		{
-			bool moveForward = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || OVRInput.Get(OVRInput.Button.One);
-			bool moveLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
+		{	
+			Vector2 location = OVRInput.Get (OVRInput.Axis2D.PrimaryTouchpad, OVRInput.Controller.RTrackedRemote);
+			bool moveForward = Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow) || (location.y > 0);
+			bool moveLeft = Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow);
 			bool moveRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
-			bool moveBack = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
+			bool moveBack = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || (location.y < 0);;
 
 			bool dpad_move = false;
 
