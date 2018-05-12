@@ -298,6 +298,7 @@ public class OVRPlayerController : MonoBehaviour
 			MoveThrottle += (actualXZ - predictedXZ) / (SimulationRate * Time.deltaTime);
 	}
 
+<<<<<<< HEAD
 
 	public void Trapped(){
 		Movable = false;
@@ -309,6 +310,8 @@ public class OVRPlayerController : MonoBehaviour
 			Movable = true;
 		}
 	}
+=======
+>>>>>>> 4b1169b8dbe50489e959651d9665112fd6b1c7a5
 
 
 	public virtual void UpdateMovement()
