@@ -283,7 +283,7 @@ public class OVRCameraRig : MonoBehaviour
 		headPose.orientation = UnityEngine.VR.InputTracking.GetLocalRotation(UnityEngine.VR.VRNode.Head);
 #endif
 
-		OVRPose invHeadPose = headPose.Inverse();
+		OVRPose invHeadPose = headPose.Inverse();	
 		Matrix4x4 invHeadMatrix = Matrix4x4.TRS(invHeadPose.position, invHeadPose.orientation, Vector3.one);
 
 		Matrix4x4 ret = centerEyeAnchor.localToWorldMatrix * invHeadMatrix;

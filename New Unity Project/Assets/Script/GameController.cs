@@ -22,4 +22,7 @@ public class GameController : MonoBehaviour {
 		float rndZ = Random.Range (200f, -200f);
 		GameObject NewEnemy = Instantiate (enemyPrefab, new Vector3 (rndZ, height, rndX), Quaternion.LookRotation(1 * Camera.main.transform.forward));
 	}
+	public void generateTrap(float x, float z, GameObject trapPrefab){
+		GameObject NewTrap = Instantiate(trapPrefab, new Vector3(z,2.0f,x),Quaternion.LookRotation(1 * Camera.main.transform.forward));
+	}
 }
