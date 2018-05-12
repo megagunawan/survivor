@@ -27,8 +27,8 @@ public class GameManager : MonoBehaviour {
 			float rndX = Random.Range (200f, -200f);
 			float rndZ = Random.Range (200f, -200f);
 			Quaternion rotation = Quaternion.identity;
-			GameObject enemy = Instantiate (FastenemyPrefab, new Vector3 (rndX, height, rndZ), Quaternion.LookRotation(1 * Camera.main.transform.forward));
-
+			GameObject FastEnemy = Instantiate (FastenemyPrefab, new Vector3 (rndX, height, rndZ), Quaternion.LookRotation(1 * Camera.main.transform.forward));
+			GameObject SlowEnemy = Instantiate (SlowenemyPrefab, new Vector3 (rndZ, height, rndX), Quaternion.LookRotation(1 * Camera.main.transform.forward));
 			//newEnemy.transform.forward = -1 * Camera.main.transform.forward;
 		}
 	}
