@@ -296,7 +296,9 @@ public class OVRPlayerController : MonoBehaviour
 			MoveThrottle += (actualXZ - predictedXZ) / (SimulationRate * Time.deltaTime);
 	}
 
-
+	public void Hitted(){
+		GameObject.FindGameObjectWithTag ("GameUI").BroadcastMessage ("AddScore", -8);
+	}
 
 
 
