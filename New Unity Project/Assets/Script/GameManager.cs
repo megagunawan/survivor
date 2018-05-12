@@ -28,8 +28,12 @@ public class GameManager : MonoBehaviour {
 			float rndZ = Random.Range (200f, -200f);
 			Quaternion rotation = Quaternion.identity;
 			GameObject FastEnemy = Instantiate (FastenemyPrefab, new Vector3 (rndX, height, rndZ), Quaternion.LookRotation(1 * Camera.main.transform.forward));
+			rndX = Random.Range (200f, -200f);
+			rndZ = Random.Range (200f, -200f);
 			GameObject SlowEnemy = Instantiate (SlowenemyPrefab, new Vector3 (rndZ, height, rndX), Quaternion.LookRotation(1 * Camera.main.transform.forward));
 			//newEnemy.transform.forward = -1 * Camera.main.transform.forward;
+			rndX = Random.Range (200f, -200f);
+			rndZ = Random.Range (200f, -200f);
 			GameObject BatEnemy = Instantiate (BatenemyPrefab, new Vector3(rndX, height, rndZ),  Quaternion.LookRotation(1 * Camera.main.transform.forward));
 		}
 	}

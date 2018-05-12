@@ -17,9 +17,15 @@ public class TrapController : MonoBehaviour {
 
 		// If the bullet has collided with an enemy, destroy both the enemy and itself.
 		if (other.gameObject.CompareTag("Player")) {
+			Debug.Log ("Trap");
 			other.gameObject.BroadcastMessage ("Trapped");
-			Destroy (gameObject);
+			StartCoroutine (delayDestroy());
 		}
 
+
+	}
+	IEnumerator delayDestroy(){
+		yield return new WaitForSeconds (.2f);
+		Destroy (this.gameObject);		
 	}
 }

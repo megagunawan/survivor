@@ -29,6 +29,7 @@ using System.Collections;
 [RequireComponent(typeof(CharacterController))]
 public class OVRPlayerController : MonoBehaviour
 {
+	private int health = 100;
 	private bool Movable = true;
 	/// <summary>
 	/// The rate acceleration during movement.
@@ -303,16 +304,21 @@ public class OVRPlayerController : MonoBehaviour
 		StartCoroutine (delayMove());
 	}
 	IEnumerator delayMove(){
-		yield return new WaitForSeconds (.2f);
+		yield return new WaitForSeconds (2f);
 		if (Movable == false) {
 			Movable = true;
 		}
 	}
+
 	public void Hitted(){
-		GameObject.FindGameObjectWithTag ("GameUI").BroadcastMessage ("AddScore", -8);
+		health -= 2;
+		Debug.Log (health);
+		GameObject.FindGameObjectWithTag ("GameUI").gameObject.BroadcastMessage ("HealthDisplay", health);
+		if (health < 0) {
+			GameObject.FindGameObjectWithTag ("GameUI").gameObject.BroadcastMessage ("Dead");
+		}
+
 	}
-
-
 
 	public virtual void UpdateMovement()
 	{

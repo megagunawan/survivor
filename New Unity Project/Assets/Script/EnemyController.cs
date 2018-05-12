@@ -17,13 +17,10 @@ public class EnemyController : MonoBehaviour {
 	public void Hitted(){
 		ParticleSystem ps = GetComponent<ParticleSystem> ();
 		ps.Emit (100);
-		StartCoroutine (delayHittedParticle());
 		this.transform.Find("Ghost_White").GetComponent<Animator>().Play("ghost_die");
-	}
-	IEnumerator delayHittedParticle(){
-		yield return new WaitForSeconds (.2f);
 		GameObject.FindGameObjectWithTag ("GameUI").BroadcastMessage ("AddScore", 1);
 		Destroy(this.gameObject);
+
 	}
      // Update is called once per frame
      void Update () {

@@ -64,11 +64,10 @@ public class EnemyBatController : MonoBehaviour {
 						// Emit bullet
 						GameObject projectile = GameObject.Instantiate(projectilePrefab);
 
-						Debug.DrawLine (target.position, transform.position);
-						Debug.Break ();
+
 						projectile.transform.position = this.transform.position;
 						Rigidbody rb = projectile.GetComponent<Rigidbody>();
-						rb.velocity = (target.position - transform.position)*200;
+						rb.velocity = (target.position - transform.position)*1;
 					}
 				}
 			} else {

@@ -1350,10 +1350,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rotationSpeed: 2
-  distance_from_target: 200
+  distance_from_target: 50
   attack_distance: 20
   attack_prob: 30
-  projectilePrefab: {fileID: 1247938531515324, guid: c8574034a8ab9cd4194043df268bc004,
+  projectilePrefab: {fileID: 1602709534253496, guid: 34515cd3840d9464884814954f7c932f,
     type: 2}
 --- !u!137 &137964177721923468
 SkinnedMeshRenderer:
