@@ -6,19 +6,27 @@ public class EnemyController : MonoBehaviour {
      public int rotationSpeed;
 	public float distance_from_target;
      
-
      
      // Use this for initialization
      void Start () {
          GameObject go = GameObject.FindGameObjectWithTag("Player");
-         
          target = go.transform;
-         
+		ParticleSystem.EmissionModule em = GetComponent<ParticleSystem> ().emission;
+		em.enabled = false;
      }
-     
+	public void Hitted(){
+		ParticleSystem ps = GetComponent<ParticleSystem> ();
+		ps.Emit (100);
+		StartCoroutine (delayHittedParticle());
+	}
+	IEnumerator delayHittedParticle(){
+		yield return new WaitForSeconds (.2f);
+		GameObject.FindGameObjectWithTag ("GameUI").BroadcastMessage ("AddScore", 1);
+		Destroy(this.gameObject);
+	}
      // Update is called once per frame
      void Update () {
-         
+
          float distance = Vector3.Distance(target.transform.position, transform.position);
          
 		if(distance > distance_from_target) {
