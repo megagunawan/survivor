@@ -299,6 +299,7 @@ public class OVRPlayerController : MonoBehaviour
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	public void Trapped(){
 		Movable = false;
@@ -311,6 +312,8 @@ public class OVRPlayerController : MonoBehaviour
 		}
 	}
 =======
+=======
+>>>>>>> 4b1169b8dbe50489e959651d9665112fd6b1c7a5
 	public void Hitted(){
 		GameObject.FindGameObjectWithTag ("GameUI").BroadcastMessage ("AddScore", -8);
 	}
