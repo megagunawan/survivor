@@ -15,6 +15,7 @@ public class PlayerWalking : MonoBehaviour {
 		previous_x = this.transform.position.x;
 		previous_z = this.transform.position.z;
 	}
+
 	private void PlayFootStepAudio()
 	{
 

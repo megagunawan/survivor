@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour {
 		
 
 	}
-
 	void SpawnEnemies() {
 
 

@@ -21,6 +21,7 @@ limitations under the License.
 
 using System;
 using UnityEngine;
+using System.Collections;
 
 /// <summary>
 /// Controls the player's movement in virtual reality.
@@ -28,6 +29,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class OVRPlayerController : MonoBehaviour
 {
+	private bool Movable = true;
 	/// <summary>
 	/// The rate acceleration during movement.
 	/// </summary>
@@ -297,7 +299,16 @@ public class OVRPlayerController : MonoBehaviour
 	}
 
 
-
+	public void Trapped(){
+		Movable = false;
+		StartCoroutine (delayMove());
+	}
+	IEnumerator delayMove(){
+		yield return new WaitForSeconds (.2f);
+		if (Movable == false) {
+			Movable = true;
+		}
+	}
 
 
 	public virtual void UpdateMovement()
@@ -327,9 +338,14 @@ public class OVRPlayerController : MonoBehaviour
 				MoveScale = 0.0f;
 
 			MoveScale *= SimulationRate * Time.deltaTime;
-
+			float moveInfluence;
 			// Compute this for key movement
-			float moveInfluence = distance_from_center * Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
+			if (Movable) {
+				moveInfluence = distance_from_center * Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
+			} else {
+				moveInfluence = 0.0f;
+			}
+
 
 			// Run!
 			if (dpad_move || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))

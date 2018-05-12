@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour {
 		ParticleSystem ps = GetComponent<ParticleSystem> ();
 		ps.Emit (100);
 		StartCoroutine (delayHittedParticle());
+		this.transform.Find("Ghost_White").GetComponent<Animator>().Play("ghost_die");
 	}
 	IEnumerator delayHittedParticle(){
 		yield return new WaitForSeconds (.2f);
