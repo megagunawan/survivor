@@ -910,20 +910,13 @@ Prefab:
     - target: {fileID: 224000011246370088, guid: 0cc5dadcfcab96d4e8836465d4d4535e,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-<<<<<<< HEAD
       value: -0.00000086515456
-=======
-      value: -0.0000009315131
->>>>>>> 6c09b689bdbc4906553b070744501ee0f42b4939
+
       objectReference: {fileID: 0}
     - target: {fileID: 224000013436753632, guid: 0cc5dadcfcab96d4e8836465d4d4535e,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-<<<<<<< HEAD
       value: -0.00000071614295
-=======
-      value: -0.0000007825015
->>>>>>> 6c09b689bdbc4906553b070744501ee0f42b4939
       objectReference: {fileID: 0}
     - target: {fileID: 114268804619333214, guid: 0cc5dadcfcab96d4e8836465d4d4535e,
         type: 2}
