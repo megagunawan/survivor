@@ -23,13 +23,18 @@ public class BulletController : MonoBehaviour {
 	// Detect collisions.
 	void OnTriggerEnter(Collider other) {
 		Debug.Log ("BulletController::OnTriggerEnter");
- 
+		Debug.Log (other.gameObject.name);
 		// If the bullet has collided with an enemy, destroy both the enemy and itself.
-		if (other.gameObject.CompareTag("Enemy")) {
+		if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Enemy")) {
 			Debug.Log ("BulletController::OnTriggerEnter: Collided with enemy");
 			other.gameObject.BroadcastMessage ("Hitted");
 			Destroy (gameObject);
 		}
- 
+
+		if (gameObject.CompareTag("Enemy") && other.gameObject.CompareTag ("Player")) {
+			Debug.Log ("BulletController::OnTriggerEnter: Collided with player");
+			other.gameObject.BroadcastMessage ("Hitted");
+			Destroy (gameObject);
+		}		
 	}
 }

@@ -25,6 +25,7 @@ public class EnemySlowController : MonoBehaviour {
 	IEnumerator delayHittedParticle(){
 		yield return new WaitForSeconds (.2f);
 		if (life_amount <= 0) {
+			this.transform.Find("Slime_Red").GetComponent<Animator>().Play("slime_die");
 			Destroy (this.gameObject);
 			GameObject.FindGameObjectWithTag ("GameUI").BroadcastMessage ("AddScore", 10);
 		}

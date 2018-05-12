@@ -8,7 +8,7 @@ public class ShowScore : MonoBehaviour {
 	private string display_string;
 	private int score;
 	void Start () {
-		text = this.gameObject.GetComponent<Text> ();
+		text = this.gameObject.transform.Find("Text").GetComponent<Text> ();
 		display_string = "Welcome to Hunger Game";
 		text.text = display_string;
 		score = 0;

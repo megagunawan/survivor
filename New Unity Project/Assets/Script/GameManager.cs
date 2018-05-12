@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject FastenemyPrefab;
 	public GameObject SlowenemyPrefab;
+	public GameObject BatenemyPrefab;
 	public int numEnemies = 10;
 
 	// Use this for initialization
@@ -18,7 +19,6 @@ public class GameManager : MonoBehaviour {
 		
 
 	}
-
 	void SpawnEnemies() {
 
 
@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour {
 			GameObject FastEnemy = Instantiate (FastenemyPrefab, new Vector3 (rndX, height, rndZ), Quaternion.LookRotation(1 * Camera.main.transform.forward));
 			GameObject SlowEnemy = Instantiate (SlowenemyPrefab, new Vector3 (rndZ, height, rndX), Quaternion.LookRotation(1 * Camera.main.transform.forward));
 			//newEnemy.transform.forward = -1 * Camera.main.transform.forward;
+			GameObject BatEnemy = Instantiate (BatenemyPrefab, new Vector3(rndX, height, rndZ),  Quaternion.LookRotation(1 * Camera.main.transform.forward));
 		}
 	}
 }
