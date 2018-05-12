@@ -311,6 +311,10 @@ public class OVRPlayerController : MonoBehaviour
 		}
 	}
 =======
+	public void Hitted(){
+		GameObject.FindGameObjectWithTag ("GameUI").BroadcastMessage ("AddScore", -8);
+	}
+
 >>>>>>> 4b1169b8dbe50489e959651d9665112fd6b1c7a5
 
 
