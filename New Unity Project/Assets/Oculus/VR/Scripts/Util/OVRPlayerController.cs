@@ -309,10 +309,10 @@ public class OVRPlayerController : MonoBehaviour
 		{	
 			Vector2 location = OVRInput.Get (OVRInput.Axis2D.PrimaryTouchpad, OVRInput.Controller.RTrackedRemote);
 			bool moveForward = Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow) || (location.y > 0);
-			bool moveLeft = Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow);
-			bool moveRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
+			bool moveLeft = Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow) || (location.x < 0);;
+			bool moveRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || (location.x > 0);;
 			bool moveBack = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || (location.y < 0);;
-
+			float distance_from_center = Math.Abs(location.y * location.y + location.x * location.x);
 			bool dpad_move = false;
 
 
@@ -329,7 +329,7 @@ public class OVRPlayerController : MonoBehaviour
 			MoveScale *= SimulationRate * Time.deltaTime;
 
 			// Compute this for key movement
-			float moveInfluence = Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
+			float moveInfluence = distance_from_center * Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
 
 			// Run!
 			if (dpad_move || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
