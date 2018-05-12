@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/4140Proj.unity
     guid: bb095b379a9428d4fae1fa88ca395979
+  - enabled: 1
+    path: Assets/OffScene.unity
+    guid: 48cc690ecf2804d48826e1b0f60fc84a
