@@ -386,7 +386,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1023859353}
-  - component: {fileID: 1023859354}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Untagged
@@ -401,24 +400,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1023859352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.3015556, y: 1.15, z: 105.07027}
+  m_LocalPosition: {x: 4.692703, y: 15.84, z: 14.8}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_Children:
   - {fileID: 1085445493}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1023859354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1023859352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22667d00c0dfaea42adec5639e0d84e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1085445488
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +419,7 @@ GameObject:
   - component: {fileID: 1085445491}
   - component: {fileID: 1085445490}
   - component: {fileID: 1085445489}
+  - component: {fileID: 1085445494}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -497,8 +486,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 23.42738, z: 1}
+  m_Center: {x: 0, y: 11.21369, z: 0}
 --- !u!33 &1085445492
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -519,6 +508,17 @@ Transform:
   m_Father: {fileID: 1023859353}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1085445494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1085445488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22667d00c0dfaea42adec5639e0d84e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1090187750 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100014, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
