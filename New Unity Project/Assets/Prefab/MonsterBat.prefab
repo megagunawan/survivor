@@ -579,9 +579,11 @@ GameObject:
   - component: {fileID: 114648953191780832}
   - component: {fileID: 198495459271640450}
   - component: {fileID: 199925200057691438}
+  - component: {fileID: 114511717300225336}
+  - component: {fileID: 114687521484956264}
   m_Layer: 0
   m_Name: MonsterBat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1337,6 +1339,38 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114511717300225336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907560068751884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 243
+    i1: 55
+    i2: 165
+    i3: 160
+    i4: 187
+    i5: 204
+    i6: 228
+    i7: 203
+    i8: 154
+    i9: 126
+    i10: 159
+    i11: 68
+    i12: 207
+    i13: 84
+    i14: 154
+    i15: 4
+  m_ServerOnly: 1
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114648953191780832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1355,6 +1389,27 @@ MonoBehaviour:
   attack_prob: 30
   projectilePrefab: {fileID: 1602709534253496, guid: 34515cd3840d9464884814954f7c932f,
     type: 2}
+--- !u!114 &114687521484956264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907560068751884}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!137 &137964177721923468
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

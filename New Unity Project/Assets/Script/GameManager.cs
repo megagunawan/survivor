@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : NetworkBehaviour {
 
 	public GameObject FastenemyPrefab;
 	public GameObject SlowenemyPrefab;
@@ -11,7 +12,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SpawnEnemies ();	
+		SpawnEnemies ();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour {
 			float rndX = Random.Range (200f, -200f);
 			float rndZ = Random.Range (200f, -200f);
 			Quaternion rotation = Quaternion.identity;
+			//Debug.Log (FastenemyPrefab);
 			GameObject FastEnemy = Instantiate (FastenemyPrefab, new Vector3 (rndX, height, rndZ), Quaternion.LookRotation(1 * Camera.main.transform.forward));
 			rndX = Random.Range (200f, -200f);
 			rndZ = Random.Range (200f, -200f);
