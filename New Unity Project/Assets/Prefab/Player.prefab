@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 114874568426742172}
   - component: {fileID: 114472865522976048}
   - component: {fileID: 114974079636510332}
+  - component: {fileID: 114644919106565144}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1109,6 +1110,27 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1247938531515324, guid: c8574034a8ab9cd4194043df268bc004,
     type: 2}
   audio: {fileID: 82873491144229626}
+--- !u!114 &114644919106565144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325305663689152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 4
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114664394176856644
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-public class EnemyBatController : MonoBehaviour {
+using UnityEngine.Networking;
+
+public class EnemyBatController : NetworkBehaviour {
 	public int moveSpeed;
 	public int rotationSpeed;
 	public float distance_from_target;
@@ -14,9 +16,9 @@ public class EnemyBatController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (!isServer)
+			return;
 		life_amount = 2;
-		GameObject go = GameObject.FindGameObjectWithTag("Player");
-		target = go.transform;
 
 		animator = this.transform.Find ("Bat_Yellow").GetComponent<Animator>();
 		last_attack_time = 0;
@@ -37,14 +39,23 @@ public class EnemyBatController : MonoBehaviour {
 		yield return new WaitForSeconds (.2f);
 		if (life_amount <= 0) {
 			animator.Play("bat_die");
-			Destroy (this.gameObject);
-			GameObject.FindGameObjectWithTag ("GameUI").BroadcastMessage ("AddScore", 8);
+			NetworkServer.Destroy (this.gameObject);
+			//GameObject.FindGameObjectWithTag ("GameUI").BroadcastMessage ("AddScore", 8);
 		}
 
 	}
 
 	// Update is called once per frame
 	void Update () {
+		if (!isServer)
+			return;
+
+		if (target == null) {
+			GameObject go = GameObject.FindGameObjectWithTag ("Player");
+			if (go == null)
+				return;
+			target = go.transform;
+		}
 
 		float distance = Vector3.Distance(target.transform.position, transform.position);
 

@@ -12,6 +12,10 @@ public class GameManager : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (!isServer)
+			return;
+		Camera main = GetComponent<Camera> ();
+		main.enabled = true ;
 		SpawnEnemies ();
 	}
 	
@@ -28,7 +32,7 @@ public class GameManager : NetworkBehaviour {
 			float rndX = Random.Range (200f, -200f);
 			float rndZ = Random.Range (200f, -200f);
 			Quaternion rotation = Quaternion.identity;
-			//Debug.Log (FastenemyPrefab);
+			Debug.Log (Camera.main);
 			GameObject FastEnemy = Instantiate (FastenemyPrefab, new Vector3 (rndX, height, rndZ), Quaternion.LookRotation(1 * Camera.main.transform.forward));
 			rndX = Random.Range (200f, -200f);
 			rndZ = Random.Range (200f, -200f);
@@ -37,6 +41,9 @@ public class GameManager : NetworkBehaviour {
 			rndX = Random.Range (200f, -200f);
 			rndZ = Random.Range (200f, -200f);
 			GameObject BatEnemy = Instantiate (BatenemyPrefab, new Vector3(rndX, height, rndZ),  Quaternion.LookRotation(1 * Camera.main.transform.forward));
+			NetworkServer.Spawn (FastEnemy);
+			NetworkServer.Spawn (SlowEnemy);
+			NetworkServer.Spawn (BatEnemy);
 		}
 	}
 }

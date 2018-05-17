@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
  
-public class BulletController : MonoBehaviour {
+public class BulletController : NetworkBehaviour {
  
 	public float maxDistance = 100f;
  
@@ -14,9 +15,10 @@ public class BulletController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Self-destruct if this bullet exceeds maxDistance from the camera.
-
+		if (!isServer)
+			return;
 		if (Vector3.Distance (transform.position, Camera.main.transform.position) > maxDistance) {
-			Destroy (gameObject);
+			NetworkServer.Destroy (gameObject);
 		}
 	}
  
@@ -28,7 +30,7 @@ public class BulletController : MonoBehaviour {
 		if (other.gameObject.CompareTag("Enemy")) {
 			Debug.Log ("BulletController::OnTriggerEnter: Collided with enemy");
 			other.gameObject.BroadcastMessage ("Hitted");
-			Destroy (gameObject);
+			NetworkServer.Destroy (gameObject);
 		}
 
 	}
