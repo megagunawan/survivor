@@ -1,0 +1,5 @@
+1. Add a model to player
+2. Let client trigger the shooting event in server
+3. Fix the connect button
+
+4. Record video

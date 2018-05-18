@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 // Credit to https://gist.github.com/JISyed/5017805
 
-public class MoveCamera : MonoBehaviour 
+public class MoveCamera : NetworkBehaviour 
 {
 	//
 	// VARIABLES
@@ -25,6 +26,9 @@ public class MoveCamera : MonoBehaviour
 
 	void Update () 
 	{
+		if (!isLocalPlayer)
+			return;
+		
 		// Get the left mouse button
 		if(Input.GetMouseButtonDown(0))
 		{
